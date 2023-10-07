@@ -19,12 +19,4 @@ Each project is contained within its own directory. To run a project, follow the
 
 Feel free to explore the project's code to learn how it works and make improvements.
 
-## Contributing
-
-Contributions are welcome! If you'd like to add more projects or improve existing ones, please fork this repository and submit a pull request.
-
-## License
-
-This repository is licensed under the [MIT License](LICENSE), allowing you to use the code for your learning or in your own projects.
-
 Happy coding!
