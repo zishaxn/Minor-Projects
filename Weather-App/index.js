@@ -16,7 +16,7 @@ async function getWeather(city) {
 
     // Parse the JSON response.
     let data = await response.json();
-    console.log(data);
+    // console.log(data);
 
     // Check for invalid city (status code 404).
     if (response.status == 404) {
