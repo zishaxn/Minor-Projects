@@ -4,7 +4,7 @@ This repository contains a collection of simple web projects built using HTML, C
 
 ## Projects Included:
 
-1. **Weather App**: Check the weather for any location.
+1. **Weather App**: A basic weather app, that allows you to check the temp wind speed and humidity for any location.
 2. **Age Calculator**: Calculate your age based on your birthdate.
 3. **Quiz App**: Test your knowledge with interactive quizzes.
 4. **Random Password Generator**: Create secure passwords on the fly.
