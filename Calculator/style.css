@@ -1,0 +1,65 @@
+*{
+    box-sizing: border-box;   
+}
+
+body{
+    background: linear-gradient(#fff687,#fc0303);
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(4, 100px);
+    /*grid container will have 4 columns,and each column will have a width of 100px.*/
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    /*row should have a minimum height of 120px and a maximum height of auto.
+    The auto value means that the row's height will be determined by the content it contains. So, if the content is taller than 120px, 
+    the row will expand to fit the content' s height. Otherwise,
+    it will be at least 120px in height.*/
+    height: 100vh;
+}
+.span-two {
+    grid-column: span 2;
+}
+
+.output {
+    grid-column: 1/-1;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.calculator-grid > button{
+    font-size: 2rem;
+    background-color: #ccc;
+    color: black;
+    font-weight: bolder;
+    border: 1px solid white;
+    cursor: pointer; 
+    transition: 0.2s ease-in;
+}
+
+.calculator-grid>button:hover {
+    background-color: rgb(255, 122, 144);
+    color: whitesmoke;
+    transition: 0.2s ease-out;  
+}
+
+.output .previous-operand {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.5rem;
+}
+
+.output .current-operand {
+    color: white;
+    font-size: 2.5rem;
+}
