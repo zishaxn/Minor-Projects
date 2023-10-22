@@ -17,11 +17,10 @@ const sleep = () => {
   });
 };
 
-
 // display welcome message and aout the game
 async function welcome() {
   const rainbowTitle = chalkAnimation.rainbow(
-    "Who Wants To Be A Javacsript Millionaire? \n",
+    "Who Wants To Be A Javacsript Millionaire? \n"
   );
   await sleep();
   rainbowTitle.stop();
@@ -93,6 +92,7 @@ async function question4() {
 
 async function handleAnswer(isCorrect) {
   const spinner = createSpinner("Checking answer...").start();
+  await sleep();
   if (isCorrect) {
     spinner.success({
       text: `Nice work ${playerName}. Thats a legit answer.`,
@@ -105,14 +105,12 @@ async function handleAnswer(isCorrect) {
   }
 }
 
-
 await welcome();
 await askName();
 await question1();
 await question2();
 await question3();
 await question4();
-
 
 // to display the congrats message in ascii and in rainbow colors
 function winner() {
