@@ -2,27 +2,37 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="/assets/css/home.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact List App</title>
+    <title>
+        Contact List App
+    </title>
 </head>
 
 <body>
-    <h1>Contact List</h1>
-    <div>
+    <div class="header-section">
+        <img src="/assets/images/contact.png" alt="contact-icon">
+        <h1>My Contact List</h1>
+    </div>
+    <!-- this will display all the contacts -->
+    <div class="list-container">
         <ul>
-            <% for (let i of contact_list ){%>
+            <% for(let i of contact_list) { %>
                 <li>
-                    <p>
-                        <%=i.name%>
-                        <%=i.phone%>
+                    <p id="p2">
+                        <%= i.name %>
                     </p>
+
+                    <p id="p2">
+                        <%= i.phone %>
+                    </p>
+                    <a href="/delete-contact/?phone=<%=i.phone%>"><img src="/assets/images/delete.png"
+                            class="delete-icon" alt=""></a>
                 </li>
-                <%}%>
-            
+                <% } %>
         </ul>
     </div>
-
 </body>
 
 </html>

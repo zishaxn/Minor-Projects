@@ -3,8 +3,22 @@ const path = require("path");
 const port = 7600;
 const app = express();
 
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
+
+// setting up directory for static files for styling & functioning
+// Serve static files from the 'assets' directory
+app.use(express.static("assets"));
+app.use(
+  "/assets",
+  express.static(path.join(__dirname, "assets"), {
+    setHeaders: (res, path, start) => {
+      if (path.endsWith(".css")) {
+        res.setHeader("Content-Type", "text/css");
+      }
+    },
+  })
+);
 
 var contacts = [
   {
@@ -26,9 +40,9 @@ var contacts = [
 ];
 
 app.get("/", (req, res) => {
-  res.render('home', {
+  res.render("home", {
     contact_list: contacts,
-  })
+  });
 });
 
 app.listen(port, (err) => {
