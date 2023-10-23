@@ -3,6 +3,13 @@ const { log } = require("console");
 const express = require("express");
 const path = require("path");
 const port = 7600;
+
+// connecting db instance with the mongoDb confihurations
+const db = require('./config/mongoose');
+
+// deefining instance for contacts db.
+const Contact = require('./models/contact')
+
 const app = express();
 
 app.set("view engine", "ejs");
