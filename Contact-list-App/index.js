@@ -4,6 +4,14 @@ const express = require("express");
 const path = require("path");
 const port = 7600;
 
+// .env
+
+const dotenv = require('dotenv');
+
+dotenv.config({
+  path: "./data/config.env"
+});
+
 // connecting db instance with the mongoDb confihurations
 const db = require("./config/mongoose");
 
@@ -74,10 +82,10 @@ app.get("/", async (req, res) => {
   }
 });
 
-app.listen(port, (err) => {
+app.listen(process.env.PORT, (err) => {
   if (err) {
     console.log(err);
     return;
   }
-  console.log("Successful Connection");
+  console.log("Successful Connection On:" ,process.env.PORT);
 });
